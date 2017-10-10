@@ -21,7 +21,7 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
-        ### newton iteration
+        ### Newton's method
         a=x**2
         b=x
         while int(b)**2>x or (int(b)+1)**2<=x:
