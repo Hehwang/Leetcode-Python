@@ -4,6 +4,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
+		##O(n)
         maxRight=0
         i=0
         while maxRight<len(nums)-1:
