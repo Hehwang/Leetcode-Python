@@ -16,7 +16,7 @@ class Solution(object):
             for i in range(2):
                 if i==0 and root.left:
                     self.helper(total+root.val,root.left,sum)
-                elif root.right:
+                elif i==1 and root.right:
                     self.helper(total+root.val,root.right,sum)
     def hasPathSum(self, root, sum):
         """
