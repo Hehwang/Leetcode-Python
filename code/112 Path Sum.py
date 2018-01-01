@@ -7,18 +7,17 @@
 
 class Solution(object):
     def __init__(self):
-        self.res=[]
+        self.res=False
     def helper(self,total,root,sum):
         if not (root.right or root.left):
             if total+root.val==sum:
-                self.res.append(total+root.val)
+                self.res=True
         else:
             for i in range(2):
-                if root:
-                    if i==0 and root.left:
-                        self.helper(total+root.val,root.left,sum)
-                    elif root.right:
-                        self.helper(total+root.val,root.right,sum)
+                if i==0 and root.left:
+                    self.helper(total+root.val,root.left,sum)
+                elif root.right:
+                    self.helper(total+root.val,root.right,sum)
     def hasPathSum(self, root, sum):
         """
         :type root: TreeNode
@@ -27,6 +26,6 @@ class Solution(object):
         """
         if root: 
             self.helper(0,root,sum)
-            return sum in self.res
+            return self.res
         else:
             return False
