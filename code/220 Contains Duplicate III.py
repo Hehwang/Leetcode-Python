@@ -6,6 +6,7 @@ class Solution(object):
         :type t: int
         :rtype: bool
         """
+		
         buckets = {}
         for i, v in enumerate(nums):
             bucketNum, offset = (int(v / t), 1) if t else (v, 0)
